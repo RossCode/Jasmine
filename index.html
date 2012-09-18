@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Unit of Measure Defaults</title>
+        <script type="text/javascript" src="/lib/jquery.js"></script>
+        <script type="text/javascript" src="/src/index.js"></script>
+        <script type="text/javascript">
+            var uomTypes = [
+                {
+                    "Id":1, "Name":"Volume", "UnitsOfMeasure":[
+                        { "Id":3,"Name":"Liters","IsDefault":true },
+                        { "Id":4,"Name":"Meters","IsDefault":false}]
+                },
+                {
+                    "Id":2,"Name":"Weight","UnitsOfMeasure":[
+                        {"Id":5,"Name":"Kilograms","IsDefault":true},
+                        {"Id":6,"Name":"Pounds","IsDefault":false}]
+                },
+                {
+                    "Id":3,"Name":"Pressure","UnitsOfMeasure":[
+                        {"Id":7,"Name":"PSI","IsDefault":true},
+                        {"Id":8,"Name":"Bars","IsDefault":false}]
+                },
+                {
+                    "Id":4,"Name":"Temperature","UnitsOfMeasure":[
+                        {"Id":1,"Name":"Farenheit","IsDefault":true},
+                    {"Id":2,"Name":"Celcius","IsDefault":false}]
+                }];
+        </script>
+    </head>
+    <body>
+        <div>Select Unit of Measure Defaults</div>
+        <div id="divUnitsOfMeasure"></div>
+        <div><input type="submit" name="btnSave" value="Save Defaults" onclick="saveSelectedValues();" id="btnSave" /></div>
+        <input type="hidden" name="hdnTypes" id="hdnTypes" />
+    </body>
+</html>
