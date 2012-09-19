@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    addRowTo($("#divUnitsOfMeasure"));
+});
+
+function addRowTo(divToAppend) {
     for (var typeIndex in uomTypes) {
         var uomType = uomTypes[typeIndex];
         var id = "UoMType" + uomType.Id;
@@ -11,11 +15,15 @@ $(document).ready(function() {
         var row = $("<div />");
         row.append(label);
         row.append(selectBox);
-        $("#divUnitsOfMeasure").append(row);
+        divToAppend.append(row);
     }
-});
+}
 
 function saveSelectedValues() {
+    saveUnitOfMeasuresJsonTo($('#hdnTypes'));
+}
+
+function saveUnitOfMeasuresJsonTo(field) {
     for (var typeIndex in uomTypes) {
         var uomType = uomTypes[typeIndex];
         var id = "UoMType" + uomType.Id;
@@ -27,5 +35,5 @@ function saveSelectedValues() {
         });
     }
 
-    $('#hdnTypes').val(JSON.stringify(uomTypes));
-}
+    field.val(JSON.stringify(uomTypes));
+};
