@@ -2,23 +2,26 @@
 <html>
     <head>
         <title>Spec Runner</title>
-        
-        <script type="text/javascript" src="../lib/jquery.js"></script>
-
         <link rel="stylesheet" type="text/css" href="/lib/jasmine/jasmine.css">
 
+        <script type="text/javascript" src="../lib/jquery.js"></script>
         <script type="text/javascript" src="../lib/jasmine/jasmine.js"></script>
         <script type="text/javascript" src="../lib/jasmine/jasmine-html.js"></script>
         <script type="text/javascript" src="../lib/jasmine/jasmine-jquery.js"></script>
         
+        <script type="text/javascript" src="../lib/phantom-jasmine/console-runner.js"></script>
+
         <script type="text/javascript" src="../src/index.js"></script>
 
         <script type="text/javascript" src="../src/specs/index.specs.js"></script>
     </head>
     <body>
         <script type"text/javascript">
+            var console_reporter = new jasmine.ConsoleReporter();
             jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+            jasmine.getEnv().addReporter(console_reporter);
             jasmine.getEnv().execute();
+            phantom.exit();
         </script>
     </body>
 </html>

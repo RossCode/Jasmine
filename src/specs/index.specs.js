@@ -5,33 +5,35 @@ var uomTypes = [{
 }];
 
 describe('When loading the view', function() {
-    var selectDiv;
-
     beforeEach(function(){
-        selectDiv = $('<div id="divUnitsOfMeasure"></div>');
-        spyOn(selectDiv, 'append');
-
-        addRowTo(selectDiv);
+        jasmine.getFixtures().set("<div id='divUnitsOfMeasure'></div>");
     });
 
-
     it ('it should create drop downs', function() {
-        expect(selectDiv.append).toHaveBeenCalled();
+        addRowTo($('#divUnitsOfMeasure'));
+        expect($('#divUnitsOfMeasure').children().length).toBeGreaterThan(0);
     });
 });
 
 describe('When saving the view', function() {
-    var hiddenField;
-
     beforeEach(function(){
-        hiddenField = $('<input type="hidden" id="hdnTypes" />');
-        spyOn(hiddenField, 'val');
-        
-        saveUnitOfMeasuresJsonTo(hiddenField);
+        jasmine.getFixtures().set('<input type="hidden" id="hdnTypes" />');
     });
 
     it('it should save the new json to the hidden field', function() {
-        expect(hiddenField.val).toHaveBeenCalled();
+        saveUnitOfMeasuresJsonTo($('#hdnTypes'));
+        expect($('#hdnTypes').val()).toBeDefined();
+    });
+});
+
+describe('When the dom event fires', function() {
+    
+    beforeEach(function() {
+        jasmine.getFixtures().set('<input type="hidden" id="hdnTypes" />');
     });
 
+    it('it should save the new json to the hidden field', function() {
+        saveSelectedValues();
+        expect($('#hdnTypes').val()).toBeDefined();
+    });
 });
