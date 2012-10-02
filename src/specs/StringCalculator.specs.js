@@ -1,3 +1,5 @@
+/// <reference path="../StringCalculator.js" />
+
 describe('String calculator specs', function() {
     beforeEach(function() {
         stringCalculator = new StringCalculator();

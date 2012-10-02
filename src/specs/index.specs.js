@@ -1,3 +1,9 @@
+/// <references path="../../lib/jquery.js" />
+/// <references path="../../lib/jasmine/jasmine.js" />
+/// <references path="../../lib/jasmine/jasmine-html.js" />
+/// <references path="../../lib/jasmine/jasmine-jquery.js" />
+/// <references path="../index.js" />
+
 var uomTypes = [{
     "Id":1,
     "Name":"Volume",
