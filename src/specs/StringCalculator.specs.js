@@ -5,7 +5,7 @@ describe('String calculator specs', function() {
 
     describe('when adding an empty string', function() {
         it('It should return 0', function() {
-            expect(stringCalculator.add(null)).toEqual(0);
+            expect(stringCalculator.add(null)).toEqual(1);
         });
     });
 
