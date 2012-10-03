@@ -18,7 +18,6 @@ describe('When loading the view', function() {
     it ('it should create drop downs', function() {
         addRowTo($('#divUnitsOfMeasure'));
         expect($('#divUnitsOfMeasure').children().length).toBeGreaterThan(0);
-        expect(0).toEqual(1);
     });
 });
 
