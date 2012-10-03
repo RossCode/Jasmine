@@ -1,8 +1,8 @@
-/// <references path="../../lib/jquery.js" />
-/// <references path="../../lib/jasmine/jasmine.js" />
-/// <references path="../../lib/jasmine/jasmine-html.js" />
-/// <references path="../../lib/jasmine/jasmine-jquery.js" />
-/// <references path="../index.js" />
+/// <reference path="../../lib/jquery.js" />
+/// <reference path="../../lib/jasmine/jasmine.js" />
+/// <reference path="../../lib/jasmine/jasmine-html.js" />
+/// <reference path="../../lib/jasmine/jasmine-jquery.js" />
+/// <reference path="../index.js" />
 
 var uomTypes = [{
     "Id":1,
