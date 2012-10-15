@@ -16,7 +16,7 @@ describe('When loading the view', function() {
     });
 
     it ('it should create drop downs', function() {
-        addRowTo($('#divUnitsOfMeasure'));
+        RossCode.UoM.addRowTo($('#divUnitsOfMeasure'));
         expect($('#divUnitsOfMeasure').children().length).toBeGreaterThan(0);
     });
 });
@@ -27,7 +27,7 @@ describe('When saving the view', function() {
     });
 
     it('it should save the new json to the hidden field', function() {
-        saveUnitOfMeasuresJsonTo($('#hdnTypes'));
+        RossCode.UoM.saveUnitOfMeasuresJsonTo($('#hdnTypes'));
         expect($('#hdnTypes').val()).toBeDefined();
     });
 });
@@ -39,7 +39,7 @@ describe('When the dom event fires', function() {
     });
 
     it('it should save the new json to the hidden field', function() {
-        saveSelectedValues();
+        RossCode.UoM.saveSelectedValues();
         expect($('#hdnTypes').val()).toBeDefined();
     });
 });
